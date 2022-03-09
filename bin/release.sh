@@ -50,22 +50,22 @@ WINDOWS_X64_BUILD=trilium-windows-x64-$VERSION.zip
 MAC_X64_BUILD=trilium-mac-x64-$VERSION.zip
 SERVER_BUILD=trilium-linux-x64-server-$VERSION.tar.xz
 
-echo "Creating release in GitHub"
+# echo "Creating release in GitHub"
 
-EXTRA=
+# EXTRA=
 
-if [[ $TAG == *"beta"* ]]; then
-  EXTRA=--prerelease
-fi
+# if [[ $TAG == *"beta"* ]]; then
+#   EXTRA=--prerelease
+# fi
 
-echo "$GITHUB_CLI_AUTH_TOKEN" | gh auth login --with-token
+# echo "$GITHUB_CLI_AUTH_TOKEN" | gh auth login --with-token
 
-gh release create "$TAG" \
-    --title "$TAG release" \
-    --notes "" \
-    $EXTRA \
-    "dist/$DEBIAN_X64_BUILD" \
-    "dist/$LINUX_X64_BUILD" \
-    "dist/$WINDOWS_X64_BUILD" \
-    "dist/$MAC_X64_BUILD" \
-    "dist/$SERVER_BUILD"
+# gh release create "$TAG" \
+#     --title "$TAG release" \
+#     --notes "" \
+#     $EXTRA \
+#     "dist/$DEBIAN_X64_BUILD" \
+#     "dist/$LINUX_X64_BUILD" \
+#     "dist/$WINDOWS_X64_BUILD" \
+#     "dist/$MAC_X64_BUILD" \
+#     "dist/$SERVER_BUILD"
